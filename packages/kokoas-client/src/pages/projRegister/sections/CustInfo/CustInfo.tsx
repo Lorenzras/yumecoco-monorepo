@@ -36,6 +36,7 @@ export const CustInfo = () => {
     storeName,
   } = custGroupRecord ?? {};
 
+
   const {
     customerId,
     address1,
