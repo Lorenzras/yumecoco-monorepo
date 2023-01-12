@@ -12,10 +12,7 @@ export const createPaymentList = (estimateRecord: RecordType) => {
     acc.paymentTypeList.push(cur.value.paymentType.value);
     acc.paymentAmtPerType.push(cur.value.paymentAmt.value);
 
-    return ({
-      paymentTypeList: acc.paymentTypeList,
-      paymentAmtPerType: acc.paymentAmtPerType,
-    });
+    return acc;
     
   }, {
     paymentTypeList: [] as string[],

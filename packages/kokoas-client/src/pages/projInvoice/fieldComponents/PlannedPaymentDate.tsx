@@ -1,7 +1,7 @@
 import { Grid, Stack } from '@mui/material';
 import { useState } from 'react';
-import { LabeledCheckBox } from '../../../components/ui/checkboxes';
-import { FormikDatePicker } from '../../../components/ui/datetimepickers';
+import { FormikLabeledCheckBox } from '../../../components/ui/checkboxes';
+import { FormikJADatePicker } from '../../../components/ui/datetimepickers';
 import { getFieldName } from '../form';
 
 /**
@@ -18,7 +18,7 @@ export const PlannedPaymentDate = () => {
   return (
     <Stack direction={'row'} spacing={2} alignItems={'end'}>
       <Grid item xs={12} md={7}>
-        <FormikDatePicker
+        <FormikJADatePicker
           label='入金予定日'
           name={getFieldName('plannedPaymentDate')}
           disabled={pendingChk}
@@ -26,10 +26,11 @@ export const PlannedPaymentDate = () => {
       </Grid>
 
       <Grid item xs={12} md={5}>
-        <LabeledCheckBox
+        <FormikLabeledCheckBox
+          name={getFieldName('undecidedPaymentDate')}
           label='未定'
           checked={pendingChk}
-          setCheckedHandler={chkHandler}
+          onClick={chkHandler}
         />
       </Grid>
     </Stack>

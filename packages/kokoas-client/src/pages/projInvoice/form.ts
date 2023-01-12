@@ -56,6 +56,9 @@ export const initialValues = {
   /** 入金予定日 */
   plannedPaymentDate: '',
 
+  /** 入金日未定チェック */
+  undecidedPaymentDate: false,
+
   /** 契約超過チェック */
   exceedChecked: false,
 };
