@@ -1,9 +1,9 @@
 import {  Dialog, DialogContent, DialogTitle, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import { Loading } from './Loading';
 import { PreviewFooter } from './PreviewFooter';
 import { PreviewHeader } from './PreviewHeader';
 import { SelectDocuments } from './SelectDocuments';
+import { Loading } from 'kokoas-client/src/components/ui/loading/Loading';
 
 
 export const ContractDialog = ({

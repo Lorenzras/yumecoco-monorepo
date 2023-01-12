@@ -1,5 +1,6 @@
 import { Stack, Typography } from '@mui/material';
-import { externalAssets } from '../../../../assets/externalLinks';
+import { externalAssets } from 'kokoas-client/src/assets/externalLinks';
+
 
 export const Loading = () => {
   return  (

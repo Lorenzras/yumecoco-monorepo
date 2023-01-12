@@ -1,6 +1,6 @@
 import { ErrorDetails } from 'docusign-esign';
 import { ISendEnvelopeResponse, ReqSendContract } from 'types';
-import { yumecocoDocusign } from '../../config/settings';
+import { baseUrl } from '../../config/settings';
 
 export const sendContract = async (
   reqData: ReqSendContract,
@@ -20,7 +20,7 @@ export const sendContract = async (
      * The number of endpoints in our server are expected to increase or change,
      * so we will need to make an SDK for easier maintenance.
      *  */
-    const endpoint = `${yumecocoDocusign.baseUrl}/docusign/contract/send/direct`;
+    const endpoint = `${baseUrl}/docusign/contract/send/direct`;
 
     const [body, status] = await kintone.proxy(
       endpoint,

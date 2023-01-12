@@ -1,5 +1,6 @@
 import { Autocomplete, CircularProgress, Stack, TextField, TextFieldProps } from '@mui/material';
 import { useSearchProjects } from 'kokoas-client/src/hooksQuery';
+import { formatDataId } from 'libs';
 import { ComponentProps, useEffect, useState } from 'react';
 import { useDebounce } from 'usehooks-ts';
 import { Caption } from '../typographies';
@@ -7,6 +8,7 @@ import { Caption } from '../typographies';
 
 type Opt = {
   id: string,
+  dataId?: string,
   projName: string
 };
 
@@ -46,6 +48,7 @@ export const SearchProjects = (props: Omit<ComponentProps<typeof Autocomplete<Op
       const newOptions = recProjects
         ?.map<Opt>((rec) => ({
         id: rec.uuid.value,
+        dataId: formatDataId(rec.dataId.value),
         projName: rec.projName.value,
       }));
       setOptions(newOptions);
@@ -61,8 +64,9 @@ export const SearchProjects = (props: Omit<ComponentProps<typeof Autocomplete<Op
       onInputChange={onInputChange ? onInputChange : (_, val) => {
         setInputVal(val);
       }}
-      onChange={onChange ? onChange : (_, val)=>{
+      onChange={(e, val, reason)=>{
         setFieldVal(val);
+        onChange?.(e, val, reason);
       }}
       getOptionLabel={(opt)=> opt.projName}
       isOptionEqualToValue={(opt, v) => opt.id === v.id}
@@ -83,7 +87,7 @@ export const SearchProjects = (props: Omit<ComponentProps<typeof Autocomplete<Op
           <li {...p} key={key}>
             <Stack>
               {opt.projName}
-              <Caption text={`id: ${opt.id}`} />
+              <Caption text={`id: ${opt.dataId}`} />
             </Stack>
           </li>
         );

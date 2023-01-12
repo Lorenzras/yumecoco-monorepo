@@ -1,17 +1,24 @@
-import { Grid } from '@mui/material';
-import { MainContainer } from 'kokoas-client/src/components';
+import { Box, Stack } from '@mui/material';
+import { OtherMenu } from './otherMenu/OtherMenu';
 import { SystemUpdate } from './sections/systemUpdate/SystemUpdate';
 
 export const Home = () => {
   return (
-    <MainContainer justifyContent={'center'}>
-      <Grid
-        item
-        xs={12}
-        md={6}
+    <Box sx={{ display: 'flex' }}>
+      <Box
+        sx={{
+          flexGrow: 1,
+        }}
       >
-        <SystemUpdate />
-      </Grid>
-    </MainContainer>
+        <Stack
+          spacing={2}
+        >
+          <SystemUpdate />
+        </Stack>
+      </Box>
+
+      <OtherMenu />
+    </Box>
+
   );
 };

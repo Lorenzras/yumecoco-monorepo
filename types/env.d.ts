@@ -1,7 +1,9 @@
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
+      NODE_ENV_FORCED: string;
       KT_BASE_URL: string;
+      KT_PORTAL: string;
       KT_CUSTOMER: string;
       KT_STORE: string;
       KT_EMPLOYEE: string;
@@ -20,14 +22,17 @@ declare global {
       KT_REDIRECT_URI: string;
       KT_AUTH_CODE: string;
       KT_REFRESH_TOKEN: string;
-      DOCUSIGN_BASE_URL: string;
-      DOCUSIGN_LOCAL_URL: string;
       DS_INTEGRATOR_KEY: string;
-      DS_INTEGRATOR_KEY_KOKOAS: string;
       DS_USER_ID: string;
+      DS_ACCOUNT_ID: string;
       DS_USER_ID_PROD: string;
+      DS_ACCOUNT_ID_PROD: string;
       DS_SECRET_KEY: string;
       NX_CLOUD_AUTH_TOKEN: string;
+      CW_TOKEN_RAS: string;
+      CW_TOKEN_REPORTER: string;
+      BASE_URL: string;
+      LOCAL_URL: string;
     }
   }
 }

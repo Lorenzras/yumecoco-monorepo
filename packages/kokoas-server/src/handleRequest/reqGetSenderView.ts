@@ -1,5 +1,4 @@
 /* eslint-disable max-len */
-import axios from 'axios';
 import { RequestHandler } from 'express';
 import { TProjReq } from 'types';
 import { createSenderView } from '../api/docusign/createSenderView';

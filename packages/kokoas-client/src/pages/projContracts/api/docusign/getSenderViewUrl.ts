@@ -1,4 +1,4 @@
-import { yumecocoDocusign } from '../../../../config/settings';
+import { baseUrl } from '../../../../config/settings';
 
 /**
  * 送信者のビューのURLを生成
@@ -22,7 +22,7 @@ export const getSenderViewUrl = async (
 }> => {
 
   if (!params.envelopeId) throw new Error('Invalid Project Id.');
-  const endpoint = `${yumecocoDocusign.baseUrl}/docusign/contract/senderViewUrl`;
+  const endpoint = `${baseUrl}/docusign/contract/senderViewUrl`;
 
   const data = params;
 

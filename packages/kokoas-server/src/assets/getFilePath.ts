@@ -1,21 +1,17 @@
 import path from 'path';
 import fs from 'fs';
 
-type Envelopes =
+type FileName =
+| '見積書'
 | '請負契約書'
 | '工事請負契約約款';
 
-
-export const envolopeTemplates = {
-  '請負契約書': path.join(__dirname, 'pdf', '請負契約書.pdf'),
-  '工事請負契約約款': path.join(__dirname, 'pdf', '工事請負契約約款.pdf'),
-};
 
 export const getFilePath = ({
   fileName,
   fileType = 'pdf',
 } : {
-  fileName: Envelopes,
+  fileName: FileName,
   fileType?: 'pdf' | 'xls' | 'xlsx',
 }) => {
 

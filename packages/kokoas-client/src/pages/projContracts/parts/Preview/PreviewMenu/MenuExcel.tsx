@@ -1,7 +1,7 @@
 import { ListItemIcon, ListItemText, MenuItem } from '@mui/material';
 import { RiFileExcel2Fill } from '@react-icons/all-files/ri/RiFileExcel2Fill';
 import { useFormikContext } from 'formik';
-import { yumecocoDocusign } from '../../../../../config/settings';
+import { baseUrl } from 'kokoas-client/src/config/settings';
 import { generateParams } from '../../../../../helpers/url';
 import { TypeOfForm } from '../../../form';
 
@@ -14,7 +14,7 @@ export const MenuExcel = () => {
     projEstimateId,
   });
 
-  const endpoint = `${yumecocoDocusign.baseUrl}/docusign/contract/download?${basicParams}&fileType=xlsx`;
+  const endpoint = `${baseUrl}/docusign/contract/download?${basicParams}&fileType=xlsx`;
 
 
   return (

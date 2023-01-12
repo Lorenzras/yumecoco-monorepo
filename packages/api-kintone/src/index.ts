@@ -1,6 +1,7 @@
 export * from './@app';
 export * from './@dom';
 export * from './@file';
+export * from './@proxy';
 export * from './@users';
 export * from './client';
 export * from './common';

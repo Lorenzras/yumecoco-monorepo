@@ -1,6 +1,6 @@
 import { ErrorDetails } from 'docusign-esign';
 import { IVoidReq, IVoidRes } from 'types';
-import { yumecocoDocusign } from '../../../../config/settings';
+import { baseUrl } from '../../../../config/settings';
 
 export const voidContract = async (params: IVoidReq) => {
 
@@ -8,7 +8,7 @@ export const voidContract = async (params: IVoidReq) => {
 
     if (!params.envelopeId) throw new Error('エンベロープ番号は定義されていません。');
     if (!params.voidedReason) throw new Error('無効にする理由は定義されていません。');
-    const endpoint = `${yumecocoDocusign.baseUrl}/docusign/contract/void`;
+    const endpoint = `${baseUrl}/docusign/contract/void`;
 
     const data = params;
 

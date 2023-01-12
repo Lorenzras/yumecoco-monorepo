@@ -17,11 +17,11 @@ export const useCommonOptions = () => {
         message: '保存が出来ました。',
       });
     },
-    onError: (error: unknown) => {
+    onError: (error: Error) => {
       setSnackState({
         open: true,
         severity: 'error',
-        message: `エラーが発生しました。${(error as Error).message}`,
+        message: `エラーが発生しました。${(error).message}`,
       });
     },
 

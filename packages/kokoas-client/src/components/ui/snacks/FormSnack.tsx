@@ -1,5 +1,5 @@
 
-import { Alert, Snackbar, AlertColor } from '@mui/material';
+import { Alert, Snackbar, AlertColor, Portal } from '@mui/material';
 import { ReactNode } from 'react';
 
 
@@ -35,20 +35,22 @@ export const FormSnack : React.FC<FormSnackProps> = ({ snackState, handleClose }
   }
 
   return (
-    <Snackbar
-      anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-      open={open}
-      autoHideDuration={dynamicDuration}
-      onClose={handleClose}
-      sx={{ zIndex: 5001 }}
-    >
-      <Alert variant='filled' onClose={handleClose} severity={severity}
-        sx={{ width: '100%' }}
+    <Portal>
+      <Snackbar
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        open={open}
+        autoHideDuration={dynamicDuration}
+        onClose={handleClose}
+        sx={(theme) => ({ zIndex: theme.zIndex.modal + 10 })}
       >
-        {message}
-      </Alert>
+        <Alert variant='filled' onClose={handleClose} severity={severity}
+          sx={{ width: '100%' }}
+        >
+          {message}
+        </Alert>
 
-    </Snackbar>
+      </Snackbar>
+    </Portal>
   );
 };
 

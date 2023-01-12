@@ -1,6 +1,6 @@
 import { ReqDownloadParams, TEnvelopeStatus } from 'types';
 import { KintoneClient } from '../../../../api/kintone';
-import { yumecocoDocusign } from '../../../../config/settings';
+import { baseUrl } from '../../../../config/settings';
 import { TypeOfForm } from '../../form';
 
 type DownloadResponse = {
@@ -24,7 +24,7 @@ const dlFromCocoServer = async ({
     } = form;
 
     if (!projEstimateId) throw new Error('見積は存在していません。');
-    const endpoint = `${yumecocoDocusign.baseUrl}/docusign/contract/download?`;
+    const endpoint = `${baseUrl}/docusign/contract/download?`;
 
     const data : ReqDownloadParams = {
       userCode: kintone.getLoginUser().code,
